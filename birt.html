@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bijay</title>
+<link rel="stylesheet" href="styles.css" type="text/css" media="all" />
+  <!-- Font Awesome -->
+ <link rel="website icon" type="png" href="imgs/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+ <link href="https://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/css/nepali.datepicker.v4.0.1.min.css" rel="stylesheet" type="text/css" />
+ <link href="/path/to/local/nepali.datepicker.min.css" rel="stylesheet" type="text/css" />
+ <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
+<!-- Add inside <head> of your HTML -->
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Pacifico&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+
+ 
+</head>
+<body>
+
+<div class="main">
+  <div class="top">
+    <div class="topFlex">
+      <div class="logo">
+        <h2>BIJAY</h2>
+      </div>
+
+      <div class="studentStaff">
+        <label for="student" class="studentlabel"><i class="fa-solid fa-graduation-cap"></i> Student</label>
+        <input type="radio" name="rl" id="student" value="Student" />
+        <label for="staff" class="stafflabel"><i class="fa-solid fa-person-chalkboard"></i> Staff</label>
+        <input type="radio" name="rl" id="staff" value="Staff" />
+      </div>
+
+      <div class="topButton">
+        <button type="button"><i class="fa-solid fa-file-arrow-down"></i></button>
+        <button type="button" onclick="back()"><i class="fa-solid fa-backward"></i></button>
+      </div>
+    </div>
+
+    <br /><hr /><br />
+
+    <div class="topmain">
+      <ul>
+        <li onclick="openForm()"><i class="fa-solid fa-paperclip"></i> Form</li>
+          <li onclick="openPosition()"><i class="fa-solid fa-location-crosshairs"></i> Position</li>
+        <li onclick="openSize()"><i class="fa-solid fa-up-right-and-down-left-from-center"></i> Size</li>
+        <li onclick="openColours()"><i class="fa-solid fa-palette"></i> Colours</li>
+        <li onclick="openFontPanel()"><i class="fa-solid fa-font"></i> Font</li>
+        <li onclick="openStylePanel()"><i class="fa-solid fa-bold"></i> Style</li>
+          <li onclick="openBackground()"><i class="fa-solid fa-images"></i> Background</li>
+          <li onclick="openBorderradius() "><i class="fa-regular fa-image"></i> Image Border</li>
+      </ul>
+    </div>
+  </div>
+  <!-- form -->
+ <div class="form">
+ <h3><i class="fa-solid fa-paperclip"></i> Form</h3>
+ <span>School related. (Scroll for other...)</span>
+ <hr><br>
+ <div class="grid">
+  <label for="uploadLogo"><i class="fa-solid fa-image"></i> Upload Logo</label>
+    <input type="file" name="" id="uploadLogo">
+ <input type="input" name="" placeholder="School's name..." id="schoolnAme" oninput="schoolnAme()">
+ </div>
+
+<span>Look at top for student or staff.</span>
+ <br />
+ <div class="grid">
+   
+ <input type="text" name="" id="mR" list="mrmrs" value="" placeholder="Mr./Miss./Mrs...."/>
+ <datalist id="mrmrs">
+   <option>Mr.</option>
+   <option>Miss.</option>
+   <option>Mrs.</option>
+ </datalist>
+  <input type="text" name="" oninput="fullName()" id="fullName" value="" placeholder="Full name..."/>
+ <input type="text" name="" oninput="cLass()" id="cLass" value="" placeholder="Class..."/>
+  <input type="text" name="" oninput="pOsition()" id="pOsition" value="" placeholder="Position..."/>
+  <input type="text" name="" onclick="dAte()" id="dAte" value="" placeholder="Date..."/>
+ </div>
+<span>Uload Image</span><br>
+ <br />
+
+ <label for="uploadImage"> <i class="fa-solid fa-image"></i> Upload Image</label>
+<input type="file" name="" id="uploadImage" value="" /><br /><br>
+<button type="submit" onclick="cancelForm()"><i class="fa-solid fa-xmark"></i></button>
+<span> Choose any one option from card type.</span>
+<br><br>
+<select id="cardType" onchange="cardType()">
+  <option value="">Select Card Type</option>
+  <option value="Happy Birthday">Birthday</option>
+  <option value="Congratulation">Congratulation</option>
+  <option value="Condolence">Condolence</option>
+</select><br><br>
+<span>Enter wishes here.</span>
+<div class="grid">
+<input type="text" name="" placeholder="Wishes..." list="wisheses" id="wisHes" oninput="wisHes()">
+<datalist id="wisheses">
+  <option>Happy birthday</option>
+</datalist>
+ </div></div>
+
+<!-- Text Style Panel -->
+<div class="styles">
+  <h3><i class="fa-solid fa-bold"></i> Style</h3>
+  <hr><br>
+
+  <!-- Repeatable Style Block -->
+  <div class="style-group">
+    <label>School Name:</label>
+    <ul>
+      <li onclick="toggleStyle('schoolName', 'bold')">B</li>
+      <li onclick="toggleStyle('schoolName', 'italic')">I</li>
+      <li onclick="toggleStyle('schoolName', 'underline')">U</li>
+      <li onclick="toggleStyle('schoolName', 'transform')">Aa</li>
+    </ul>
+  </div><br>
+
+  <div class="style-group">
+    <label>Card Type:</label>
+    <ul>
+      <li onclick="toggleStyle('cardtYpe', 'bold')">B</li>
+      <li onclick="toggleStyle('cardtYpe', 'italic')">I</li>
+      <li onclick="toggleStyle('cardtYpe', 'underline')">U</li>
+      <li onclick="toggleStyle('cardtYpe', 'transform')">Aa</li>
+    </ul>
+  </div><br>
+
+  <div class="style-group">
+    <label>Full Name:</label>
+    <ul>
+      <li onclick="toggleStyle('fullNames', 'bold')">B</li>
+      <li onclick="toggleStyle('fullNames', 'italic')">I</li>
+      <li onclick="toggleStyle('fullNames', 'underline')">U</li>
+      <li onclick="toggleStyle('fullNames', 'transform')">Aa</li>
+    </ul>
+  </div><br>
+
+  <div class="style-group">
+    <label>Class / Position:</label>
+    <ul>
+      <li onclick="toggleStyle('classPosition', 'bold')">B</li>
+      <li onclick="toggleStyle('classPosition', 'italic')">I</li>
+      <li onclick="toggleStyle('classPosition', 'underline')">U</li>
+      <li onclick="toggleStyle('classPosition', 'transform')">Aa</li>
+    </ul>
+  </div><br>
+
+  <div class="style-group">
+    <label>Date:</label>
+    <ul>
+      <li onclick="toggleStyle('daTe', 'bold')">B</li>
+      <li onclick="toggleStyle('daTe', 'italic')">I</li>
+      <li onclick="toggleStyle('daTe', 'underline')">U</li>
+      <li onclick="toggleStyle('daTe', 'transform')">Aa</li>
+    </ul>
+  </div><br>
+
+  <div class="style-group">
+    <label>Wishes:</label>
+    <ul>
+      <li onclick="toggleStyle('wishes', 'bold')">B</li>
+      <li onclick="toggleStyle('wishes', 'italic')">I</li>
+      <li onclick="toggleStyle('wishes', 'underline')">U</li>
+      <li onclick="toggleStyle('wishes', 'transform')">Aa</li>
+    </ul>
+  </div><br>
+
+  <button type="button" onclick="closeStylePanel()" title="Close Style Panel">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+</div>
+
+
+
+
+ <!-- cropper -->
+    <div id="cropperModal" style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);  background: rgba(255, 255, 255, 0.15);
+  
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid #fff; padding: 20px; z-index: 1000; border-radius: 10px; max-width: 80%; max-height: 80%;">
+   <div style="max-width: 300px; max-height: 300px; overflow: hidden; margin: 0 auto;">
+     <img id="cropImage" src="" style="max-width: 100%; display: block;">
+   </div>
+   <div style="text-align: center; margin-top: 15px;">
+     <button id="cropButton" style="padding: 10px 20px; margin-right: 10px; color: #000;">
+       <i class="fa-solid fa-crop"></i> 
+       Crop</button>
+     <button id="cancelCrop" style="padding: 10px 20px; color: red;">
+       <i class="fa-solid fa-circle-xmark"></i> 
+       Cancel</button>
+   </div>
+ </div>
+<!-- result area -->
+  <div class="area">
+    <div class="result">
+      <img src="" id="logo">
+      <h4 id="schoolName">School Name</h4>
+      <h3 id="cardtYpe">Happy Birthday</h3>
+     <div id="imageko"> <img src="" id="tbirt"></div>
+     <h1 id="fullNames">Mr. someone</h1>
+      <p id="classPosition">Staff</p>
+      <h5 id="daTe">Bs.</h5>
+      <span id="wishEs">Wishes</span>
+    </div>
+    <button onclick="window.close()"><i class="fa-solid fa-power-off"></i> Close Window</button>
+  </div>
+</div>
+
+<!-- Font Selection Panel -->
+<div class="fonts">
+  <h3><i class="fa-solid fa-font"></i> Font</h3>
+  <hr><br>
+
+  <label for="schoolFont">School Name Font:</label><br>
+  <select id="schoolFont" class="font-dropdown"></select><br><br>
+
+  <label for="cardTypeFont">Card Type Font:</label><br>
+  <select id="cardTypeFont" class="font-dropdown"></select><br><br>
+
+  <label for="nameFont">Full Name Font:</label><br>
+  <select id="nameFont" class="font-dropdown"></select><br><br>
+
+  <label for="classFont">Class / Position Font:</label><br>
+  <select id="classFont" class="font-dropdown"></select><br><br>
+
+  <label for="dateFont">Date Font:</label><br>
+  <select id="dateFont" class="font-dropdown"></select><br><br>
+
+  <label for="wishesFont">Wishes Font:</label><br>
+  <select id="wishesFont" class="font-dropdown"></select><br><br>
+
+  <button type="button" onclick="closeFontPanel()" title="Close Font Panel">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+</div>
+
+
+
+<!-- Size Section -->
+  <div class="size">
+    <h3><i class="fa-solid fa-up-right-and-down-left-from-center"></i> Size</h3>
+<br><hr><br>
+ 
+  <div class="slider-container">
+      <label for="logoSize">Logo: <span class="value" id="logoValue">10</span></label>
+      <input type="range" id="logoSize" min="0" max="100" value="10">
+    </div>
+
+
+ <div class="slider-container">
+      <label for="schoolSize">School Name: <span class="value" id="schoolValue">10</span></label>
+      <input type="range" id="schoolSize" min="0" max="100" value="10">
+    </div>
+
+ <div class="slider-container">
+      <label for="ctypeSize">Card Type: <span class="value" id="ctypeValue">10</span></label>
+      <input type="range" id="ctypeSize" min="0" max="100" value="10">
+    </div>
+
+    <div class="slider-container">
+      <label for="nameSize">Name: <span class="value" id="nameValue">20</span></label>
+      <input type="range" id="nameSize" min="0" max="100" value="20">
+    </div>
+
+    <div class="slider-container">
+      <label for="classSize">Class: <span class="value" id="classValue">10</span></label>
+      <input type="range" id="classSize" min="0" max="100" value="10">
+    </div>
+
+    <div class="slider-container">
+      <label for="imageSize">Image: <span class="value" id="imageValue">20</span></label>
+      <input type="range" id="imageSize" min="0" max="100" value="20">
+ 
+   </div>
+
+    <div class="slider-container">
+      <label for="dateSize">Date: <span class="value" id="dateValue">10</span></label>
+      <input type="range" id="dateSize" min="0" max="100" value="10">
+    </div>
+
+ <div class="slider-container">
+      <label for="wishesSize">Wishes: <span class="value" id="wishesValue">10</span></label>
+      <input type="range" id="wishesSize" min="0" max="100" value="10">
+    </div>
+
+
+ <div class="slider-container">
+      <label for="wishesHSize">Wishes Height: <span class="value" id="wishesHValue">10</span></label>
+      <input type="range" id="wishesHSize" min="0" max="100" value="10">
+    </div>
+
+     <div class="slider-container">
+      <label for="wishesWSize">Wishes Width: <span class="value" id="wishesWValue">20</span></label>
+      <input type="range" id="wishesWSize" min="0" max="100" value="20">
+    </div>
+<button type="submit" onclick="closeSize()">
+  <i class="fa-solid fa-xmark"></i></button>
+  </div>
+
+<!-- position Section -->
+  <div class="position">
+    <h3><i class="fa-solid fa-location-crosshairs"></i> Position</h3>
+<br><hr><br>
+     <!-- Logo Position Sliders -->
+  <div class="slider-container">
+    <label>Logo:</label>
+    <label for="logoTop">Top-Bottom: <span class="value" id="logoTopValue">5</span></label>
+    <input type="range" id="logoTop" min="0" max="100" value="5" oninput="document.getElementById('logoTopValue').textContent = this.value">
+
+    <label for="logoLeft">Left-Right: <span class="value" id="logoLeftValue">5</span></label>
+    <input type="range" id="logoLeft" min="0" max="100" value="5" oninput="document.getElementById('logoLeftValue').textContent = this.value">
+  </div>
+    <!-- School Name Position Sliders -->
+  <div class="slider-container">
+    <label>School Name:</label>
+    <label for="snameTop">Top-Bottom: <span class="value" id="snameTopValue">5</span></label>
+    <input type="range" id="snameTop" min="0" max="100" value="5" oninput="document.getElementById('snameTopValue').textContent = this.value">
+    
+    <label for="snameLeft">Left-Right: <span class="value" id="snameLeftValue">20</span></label>
+    <input type="range" id="snameLeft" min="0" max="100" value="20" oninput="document.getElementById('snameLeftValue').textContent = this.value">
+  </div>
+
+  <!-- Card type Position Sliders -->
+  <div class="slider-container">
+    <label>Card Type:</label>
+    <label for="ctypeTop">Top-Bottom: <span class="value" id="ctypeTopValue">20</span></label>
+    <input type="range" id="ctypeTop" min="0" max="100" value="20" oninput="document.getElementById('ctypeTopValue').textContent = this.value">
+    
+    <label for="ctypeLeft">Left-Right: <span class="value" id="ctypeLeftValue">20</span></label>
+    <input type="range" id="ctypeLeft" min="0" max="100" value="20" oninput="document.getElementById('ctypeLeftValue').textContent = this.value">
+  </div>
+    <!-- Name Position Sliders -->
+  <div class="slider-container">
+    <label>Name:</label>
+    <label for="nameTop">Top-Bottom: <span class="value" id="nameTopValue">70</span></label>
+    <input type="range" id="nameTop" min="0" max="100" value="70" oninput="document.getElementById('nameTopValue').textContent = this.value">
+    
+    <label for="nameLeft">Left-Right: <span class="value" id="nameLeftValue">20</span></label>
+    <input type="range" id="nameLeft" min="0" max="100" value="20" oninput="document.getElementById('nameLeftValue').textContent = this.value">
+  </div>
+
+ <!-- Image Position Sliders -->
+  <div class="slider-container">
+    <label>Image:</label>
+    <label for="imageTop">Top-Bottom: <span class="value" id="imageTopValue">50</span></label>
+    <input type="range" id="imageTop" min="0" max="100" value="50" oninput="document.getElementById('imageTopValue').textContent = this.value">
+
+    <label for="imageLeft">Left-Right: <span class="value" id="imageLeftValue">50</span></label>
+    <input type="range" id="imageLeft" min="0" max="100" value="50" oninput="document.getElementById('imageLeftValue').textContent = this.value">
+  </div>
+
+
+  <!-- Class Position Sliders -->
+  <div class="slider-container">
+    <label>Class:</label>
+    <label for="classTop">Top-Bottom: <span class="value" id="classTopValue">80</span></label>
+    <input type="range" id="classTop" min="0" max="100" value="80" oninput="document.getElementById('classTopValue').textContent = this.value">
+
+    <label for="classLeft">Left-Right: <span class="value" id="classLeftValue">20</span></label>
+    <input type="range" id="classLeft" min="0" max="100" value="20" oninput="document.getElementById('classLeftValue').textContent = this.value">
+  </div>
+
+  <!-- date Position Sliders -->
+  <div class="slider-container">
+    <label>Date:</label>
+    <label for="dateTop">Bottom-Top: <span class="value" id="dateTopValue">2</span></label>
+    <input type="range" id="dateTop" min="0" max="100" value="2" oninput="document.getElementById('dateTopValue').textContent = this.value">
+
+    <label for="dateLeft">Right-Left: <span class="value" id="dateLeftValue">2</span></label>
+    <input type="range" id="dateLeft" min="0" max="100" value="2" oninput="document.getElementById('dateLeftValue').textContent = this.value">
+  </div>
+ 
+  <!-- wishes Position Sliders -->
+  <div class="slider-container">
+    <label>Wishes:</label>
+    <label for="wishTop">Top-Bottom: <span class="value" id="wishTopValue">90</span></label>
+    <input type="range" id="wishTop" min="0" max="100" value="90" oninput="document.getElementById('wishTopValue').textContent = this.value">
+
+    <label for="wishLeft">Left-Right: <span class="value" id="wishLeftValue">20</span></label>
+    <input type="range" id="wishLeft" min="0" max="100" value="20" oninput="document.getElementById('wishLeftValue').textContent = this.value">
+  </div>
+
+  <button type="submit" onclick="cancelPosition()"><i class="fa-solid fa-xmark"></i></button>
+
+  </div>
+  <!-- colours -->
+<div class="colours">
+  <h3><i class="fa-solid fa-palette"></i> Colours</h3>
+  <hr><br>
+
+  <div>
+     <label for="sclColor">School Name :</label>
+    <input type="color" id="sclColor" name="sclColor">
+
+        <label for="cardTypeColor">Card Type :</label>
+    <input type="color" id="cardTypeColor" name="cardTypeColor">
+
+    <label for="nameColor">Name :</label>
+    <input type="color" id="nameColor" name="nameColor">
+
+    <label for="classColor">Class / Position :</label>
+    <input type="color" id="classColor" name="classColor">
+
+    <label for="dateColor">Date :</label>
+    <input type="color" id="dateColor" name="dateColor">
+
+     <label for="wishColor">Wishes :</label>
+    <input type="color" id="wishColor" name="wishColor">
+  </div>
+
+ <button type="submit" onclick="closeColourss()"><i class="fa-solid fa-xmark"></i></button>
+</div>
+
+<!-- Backgrounds -->
+<div class="backgrounds">
+  <h3><i class="fa-solid fa-images"></i> Backgrounds</h3>
+  <span>Change backgrounds</span>
+  <hr><br>
+  <ul class="bg-options">
+    <li><img src="bg1.jpg" alt="bg1"></li>
+    <li><img src="bg2.jpg" alt="bg2"></li>
+    <li><img src="bg3.jpg" alt="bg3"></li>
+    <li><img src="bg4.jpg" alt="bg4"></li>
+  </ul>
+  <br>
+<span>You can choose background from your file.</span>
+  <hr><br>
+ <label for="bgUpload"><i class="fa-solid fa-images"></i> Change Background</label><br>
+  <input type="file" id="bgUpload"><br>
+
+  <button type="submit" onclick="closeBackground()">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+</div>
+
+<!-- Image Border Settings -->
+<div class="borderBorder">
+  <h3><i class="fa-regular fa-image"></i> Image Border</h3>
+  <span>Image border / outline and border radius</span>
+  <hr><br>
+<span>Border and Outline</span> <br>
+  <div class="borders">
+    <input type="number" id="borderSize" placeholder="border size...">
+    <input type="color" id="borderColor">
+    <input type="number" id="outlineSize" placeholder="outline size...">
+    <input type="color" id="outlineColor">
+  </div><br>
+<span>Border Radius</span><br>
+ <div class="borderRadius">
+  <label>Top Left Radius:
+    <input type="range" id="topleftRadius" max="100" value="0">
+    <span id="valTopleftRadius">0</span>px
+  </label><br>
+
+  <label>Top Right Radius:
+    <input type="range" id="toprightRadius" max="100" value="0">
+    <span id="valToprightRadius">0</span>px
+  </label><br>
+
+  <label>Bottom Left Radius:
+    <input type="range" id="bottomleftRadius" max="100" value="0">
+    <span id="valBottomleftRadius">0</span>px
+  </label><br>
+
+  <label>Bottom Right Radius:
+    <input type="range" id="bottomrightRadius" max="100" value="0">
+    <span id="valBottomrightRadius">0</span>px
+  </label><br>
+
+  <label>Total Radius:
+    <input type="range" id="totalRadius" max="100" value="0">
+    <span id="valTotalRadius">0</span>px
+  </label>
+</div>
+
+
+  <button type="submit" onclick="closeBorderradius()">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+</div>
+
+
+<div class="footer">
+  <h4>Bijay Khanal</h4>
+  <p>&copy; 2025 bijaykhanal.99 || All Rights Reserved</p>
+  <span><a href=""><i class="fa-solid fa-phone-volume"></i> call</a><a href=""><i class="fa-solid fa-envelope"></i> Mail</a></span>
+
+</div>
+<!-- Script -->
+<script src="mains.js"></script>
+<script src="cropper.js"></script>
+<script src="colours.js"></script>
+<script src="background.js"></script>
+<script src="imageradius.js"></script>
+   <script src="https://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v4.0.1.min.js" type="text/javascript"></script>
+    <script src="/path/to/local/nepali.datepicker.min.js" type="text/javascript"></script>
+</body>
+</html>
