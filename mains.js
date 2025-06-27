@@ -218,7 +218,7 @@ wishElem.style.position = 'absolute';
 
 
       document.getElementById("download").addEventListener("click", function () {
-      const resultDiv = document.getElementById("result");
+      const resultDiv = document.querySelector(".result");
 
       html2canvas(resultDiv).then(canvas => {
         const link = document.createElement("a");
