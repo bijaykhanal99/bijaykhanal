@@ -465,3 +465,114 @@ border: 2px solid #000;
   grid-gap: 10px;
   grid-template-columns: repeat(1,1fr);
 }
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .main {
+    margin: 2px;
+  }
+
+  .main .form,
+  .backgrounds,
+  .size,
+  .position,
+  .colours,
+  .fonts,
+  .styles,
+  .borderBorder {
+    width: 90%;
+    left: 5% !important;
+    right: 5% !important;
+    top: 15% !important;
+  }
+
+  .footer span {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .footer span a {
+    width: 90%;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .topmain ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .topmain ul li {
+    width: 100%;
+    text-align: left;
+    padding: 6px;
+  }
+
+  .area {
+    height: auto;
+    padding: 10px 0;
+    flex-direction: column;
+  }
+
+  .result {
+    width: 90%;
+    height: auto;
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  .result img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .area button {
+    top: auto;
+    bottom: 5%;
+    right: 5%;
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .topFlex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .studentStaff,
+  .topButton {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .topButton button {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .main .form .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .result #schoolName,
+  .result #wishEs,
+  .result #cardtYpe,
+  .result #fullNames,
+  .result #classPosition,
+  .result #daTe {
+    font-size: 14px;
+    left: 10%;
+    top: auto;
+  }
+
+  .result #logo {
+    width: 80px;
+    height: 80px;
+    top: 10%;
+    left: 10%;
+  }
+}
