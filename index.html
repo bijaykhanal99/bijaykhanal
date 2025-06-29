@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Bijay</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0072ff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .top {
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+    }
+
+    .top h3 {
+      font-size: 1.5em;
+      text-transform: uppercase;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px 10%;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .hero-text h1 {
+      font-size: 3em;
+      color:#000;
+      text-transform: uppercase;
+    }
+
+    .hero-text h5 {
+      font-size: 1.5em;
+      color: grey;
+      margin-bottom: 15px;
+    }
+
+    .hero-text p {
+      font-size: 1.2em;
+      color: #fff;
+      max-width: 300px;
+      line-height: 1.6;
+      text-align: justify;
+      border: 2px solid #fff;
+      padding: 15px;
+      border-radius: 15px;
+    }
+
+    .hero-img {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 250px;
+    }
+
+    .hero-img img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    /* Modal Sign-in */
+    .log {
+      position: fixed;
+      left: 50%;
+      top: -100%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 255, 255, 0.1);
+border-radius: 20px;
+box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 25px 20px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 320px;
+      z-index: 1000;
+      transition: all 0.5s ease;
+    }
+
+    .log.active {
+      top: 50%;
+    }
+
+    .log h2 {
+      color: #0072ff;
+      margin-bottom: 15px;
+      text-align: center;
+      border-bottom: 3px solid red;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .log input {
+      width: 100%;
+      margin: 15px 0;
+      padding: 10px;
+      border: none;
+      border-bottom: 2px solid #fff;
+      outline: none;
+      font-size: 1em;
+      background: transparent;
+      color: #fff;
+    }
+
+    .log span {
+      position: absolute;
+      right: 35px;
+      top: 100px;
+      
+      padding: 5px 8px;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .log button.close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: transparent;
+      border: none;
+      font-size: 1.5em;
+      color: red;
+      cursor: pointer;
+    }
+
+    .log p {
+      font-size: 0.75em;
+      color: #fff;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .log button.enter-btn {
+      margin-top: 10px;
+      background: #0072ff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    footer {
+      background: #0072ff;
+      color: #fff;
+      text-align: center;
+      padding: 30px 15px;
+      margin-top: auto;
+    }
+
+    footer h3 {
+      margin-bottom: 10px;
+     
+      font-size: 0.5em;
+    }
+.top button {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.top button:hover {
+  background: #0072ff;
+  color: #fff;
+  border: 2px solid #fff;
+}
+    footer button{
+      margin-top: 10px;
+      background: #fff;
+      color: #0072ff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    footer button:hover{
+      background: transparent;
+      border: 2px solid #fff;
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+
+      .hero-text h1 {
+        font-size: 2em;
+      }
+
+      .hero-text h5 {
+        font-size: 1em;
+      }
+
+      .hero-text p {
+        font-size: 1em;
+      }
+
+      .log span {
+        right: 20px;
+        top: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top">
+    <h3>BIJAY</h3>
+    <button onclick="sign()">My Creation</button>
+
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Bijay Khanal</h1>
+      <h5>Web Developer</h5>
+      <p>
+        I'm passionate about programming and web development.
+        I love turning ideas into beautiful, functional websites. From HTML and CSS to JavaScript, I keep building to learn and grow.
+      </p>
+    </div>
+    <div class="hero-img">
+      <img src="bijay.png" alt="Bijay's Photo" />
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div class="log" id="logBox">
+    <h2>Sign In</h2>
+    <button class="close" onclick="closeSign()">&times;</button>
+    <input type="password" id="pass" placeholder="Password..." />
+    <span onclick="show()" id="show"><i class="fa-solid fa-eye"></i></span>
+    <button class="enter-btn" onclick="checkPass()">Sign In</button>
+    <p>------ Password show or hide ------</p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <h3>&copy; 2025 All Rights Reserved | bijaykhanal.99</h3>
+    <button onclick="sign()">My Creation</button>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function show() {
+      const input = document.getElementById("pass");
+      const toggle = document.getElementById("show");
+      if (input.type === "password") {
+        input.type = "text";
+        toggle.innerHTML = `<i class="fa-solid fa-eye-slash"></i>`;
+      } else {
+        input.type = "password";
+        toggle.innerHTML = `<i class="fa-solid fa-eye"></i>`;
+      }
+    }
+
+    function sign() {
+      document.getElementById("logBox").classList.add("active");
+    }
+
+    function closeSign() {
+      document.getElementById("logBox").classList.remove("active");
+    }
+
+    function checkPass() {
+      const password = document.getElementById("pass").value;
+      if (password === "2060") {
+        window.location.href = "birt.html";
+      } else {
+        alert("Incorrect password! Try again.");
+      }
+    }
+  </script>
+
+</body>
+</html>
