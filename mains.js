@@ -1,9 +1,9 @@
     function back(){
     window.history.back();}
 
-window.onload = function() {
+function dAte(){
   
-      document.getElementById('daTe').textContent = "DOB - " + document.getElementsById('dAte').value;
+      document.getElementById('daTe').textContent = "DOB - " + document.getElementById('dAte').value;
     }
   const studentRadio = document.getElementById('student');
   const staffRadio = document.getElementById('staff');
