@@ -2,13 +2,9 @@
     window.history.back();}
 
 window.onload = function() {
-  var mainInput = document.getElementById("dAte");
-  mainInput.nepaliDatePicker({
-    onChange: function() {
-      document.getElementById('daTe').textContent = "BS. " + mainInput.value;
+  
+      document.getElementById('daTe').textContent = "DOB - " + document.getElementsById('dAte').value;
     }
-  });
-}
   const studentRadio = document.getElementById('student');
   const staffRadio = document.getElementById('staff');
   const studentlabel = document.querySelector('.studentlabel');
