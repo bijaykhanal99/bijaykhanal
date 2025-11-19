@@ -166,7 +166,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: linear-gradient(175deg, #fff, yellow, cornflowerblue);
+  background: linear-gradient(175deg, #ffffff, #03b5a9);
   background-size: cover;
   background-repeat: no-repeat;
   transition: background-image 0.3s ease-in-out;
@@ -177,7 +177,7 @@
       color: #333;
     }
     
-.main .form, .backgrounds{
+.main .form, .backgrounds, .bgcustomcard{
   position: absolute;
   top: 28%;
   left:2%;
@@ -198,7 +198,7 @@ border-radius: 5px;
 .backgrounds{
   display: none;
 }
-.form h3,.size h3,.position h3, .colours h3, .fonts h3, .styles h3, .backgrounds h3, .borderBorder h3{
+.form h3,.size h3,.position h3, .colours h3, .fonts h3, .styles h3, .backgrounds h3, .borderBorder h3, .bgcustomcard h3, .textbackground h3{
   color: #fff;
 }
 
@@ -226,13 +226,22 @@ border: 2px solid #000;
   background: #333;
   color: #fff;
 }
-.main .form .grid input, .form select, .fonts select, .borderBorder input[type="number"]{
+.main .form .grid input, .form select, .fonts select, .borderBorder input[type="number"],
+ .bgcustomcard input[type="number"], .textbackground input[type="number"]{
   width: 80%;
   padding: 5px;
   border: 2px solid #000;
   outline: none;
   background: transparent;
   border-radius: 5px;
+}
+.textbackground a{
+  text-decoration: none;
+  background: red;
+  color:#fff;
+  margin: 5px;
+  padding: 2px;
+  cursor: pointer;
 }
 .main .form .grid input::placeholder {
   color: #000;          
@@ -243,25 +252,26 @@ border: 2px solid #000;
   -moz-appearance: none;    /* Removes default styling in Firefox */
   appearance: none;
 }
-.main .form button,.size button,.position button,.colours button,.fonts button, .styles button, .backgrounds button, .borderBorder button{
+.main .form button,.size button,.position button,.colours button,.fonts button, .styles button, .backgrounds button,
+ .borderBorder button, .bgcustomcard button, .textbackground button{
   position: absolute;
   right: 2%;
   top: 2%;
   height: 40px;
   width: 40px;
-  border: 2px solid #000;
-color: #000;
+  border: 2px solid #fff;
+color: #fff;
 border-radius: 5px;
 cursor: pointer;
 background: transparent;
 }
 .main .form button:hover,.size button:hover,.position button:hover, .colours button:hover, .fonts button:hover,
-.styles button:hover, .backgrounds button:hover, .borderBorder button:hover{
+.styles button:hover, .backgrounds button:hover, .borderBorder button:hover, .bgcustomcard button:hover, .textbackground button:hover{
   background: red;
-  color: #fff;
+  
   border: none;
 }
-#pOsition{
+#pOsition, .bgcustomcard, .textbackground{
   display: none;
 }
 .result #logo{
@@ -329,7 +339,7 @@ overflow-wrap: break-word;
   padding: 5px;
 }
 
-.size,.position,.colours,.fonts, .styles, .borderBorder{
+.size,.position,.colours,.fonts, .styles, .borderBorder, .textbackground{
       padding: 20px;
       max-width: 400px;
       height: 300px;
@@ -357,7 +367,8 @@ border-radius: 5px;
       right: 20%;
     }
     .size::-webkit-scrollbar,.position::-webkit-scrollbar,.form::-webkit-scrollbar,.colours::-webkit-scrollbar,
-    .fonts::-webkit-scrollbar,.styles::-webkit-scrollbar, .backgrounds::-webkit-scrollbar, .borderBorder::-webkit-scrollbar{
+    .fonts::-webkit-scrollbar,.styles::-webkit-scrollbar, .backgrounds::-webkit-scrollbar, .borderBorder::-webkit-scrollbar, 
+    .bgcustomcard::-webkit-scrollbar, .textbackground::-webkit-scrollbar{
   display: none;              /* Chrome, Safari, Opera */
 }
 
@@ -465,6 +476,14 @@ border: 2px solid #000;
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(1,1fr);
+}
+.bgcustom li{
+  margin: 10px; background: #fff; text-align: center; padding: 10px; border-radius: 10px; cursor: pointer; list-style: none;
+}
+.bgcustom li:hover{
+  background: #333;
+  color: #fff;
+
 }
 @media (max-width: 768px) {
   body {
