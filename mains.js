@@ -85,6 +85,24 @@ function dAte(){
     document.querySelector('.colours').style.display = "none";
   }
 
+
+  function openBgcustomcard(){
+    document.querySelector('.bgcustomcard').style.display = "block";
+  }
+    function closeBgcustomcard(){
+    document.querySelector('.bgcustomcard').style.display = "none";
+  }  
+
+
+  function openTextBackground(){
+    document.querySelector('.textbackground').style.display = "block";
+  }
+    function closeTextBackground(){
+    document.querySelector('.textbackground').style.display = "none";
+  }  
+
+
+
       document.addEventListener('keydown', function(event) {
       if (event.ctrlKey && event.key === '1') {
         event.preventDefault(); // Prevent browser's default find behavior
