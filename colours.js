@@ -23,8 +23,13 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("wishColor").addEventListener("input", function () {
     document.getElementById("wishEs").style.color = this.value;
   });
-});
 
+
+
+
+
+
+});
 // Function to reset all colors and inputs
 function cancelColours() {
   const inputs = document.querySelectorAll('.colours input[type="color"]');
@@ -136,3 +141,56 @@ function openStylePanel() {
 function closeStylePanel() {
   document.querySelector(".styles").style.display = "none";
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  // Universal function to bind inputs
+  function bindStyleControls(prefix, targetId) {
+    const bg = document.getElementById(prefix + "Bg");
+    const border = document.getElementById(prefix + "Border");
+    const outline = document.getElementById(prefix + "Outline");
+    const target = document.getElementById(targetId);
+
+    if (!target) return;
+
+    if (bg) {
+      bg.addEventListener("input", () => {
+        target.style.backgroundColor = bg.value;
+      });
+    }
+
+    if (border) {
+      border.addEventListener("input", () => {
+        target.style.border = "2px solid " + border.value;
+      });
+    }
+
+    if (outline) {
+      outline.addEventListener("input", () => {
+        target.style.outline = "2px solid " + outline.value;
+      });
+    }
+  }
+
+  // Bind all elements in one place
+  bindStyleControls("school", "schoolName");
+  bindStyleControls("card", "cardtYpe");
+  bindStyleControls("full", "fullNames");
+  bindStyleControls("pos", "classPosition");
+  bindStyleControls("date", "daTe");
+  bindStyleControls("wish", "wishEs");
+
+});
+
+
+
+
+function clearStyles(id) {
+  const el = document.getElementById(id);
+
+  el.style.backgroundColor = "transparent";
+  el.style.border = "none";
+  el.style.outline = "none";
+  el.style.padding = "0px";
+}
+
